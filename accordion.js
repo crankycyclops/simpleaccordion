@@ -16,5 +16,10 @@ $.fn.SimpleAccordion = function(options) {
 
 		//Hide the other panels
 		$('.accordion-content').not($(this).next()).slideUp('fast');
+
+		// call callback (if one was specified)
+		if ('function' == typeof options.callback) {
+			options.callback($(this).parent().get(0));
+		}
 	});
 }
