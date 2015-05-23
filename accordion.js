@@ -1,5 +1,5 @@
 /**
- * Simple jQuery Accordion that doesn't reply on the extremely heavy jQuery UI
+ * Simple jQuery Accordion that doesn't rely on the extremely heavy jQuery UI
  * library.
  *
  * Based on code from: http://uniondesign.ca/simple-accordion-without-jquery-ui/
