@@ -6,6 +6,8 @@
  */
 $.fn.SimpleAccordion = function(options) {
 
+	var that = this;
+
 	// initialize accordion
 	this.find('.accordion-item').data('active', false);
 
@@ -16,7 +18,9 @@ $.fn.SimpleAccordion = function(options) {
 	// if we have any default items that are active by default, we should call their callbacks
 	if (this.find('.accordion-item.default').length > 0) {
 		$.each(this.find('.accordion-item.default'), function (i, item) {
-			options.callback($(item).get(0), true);
+			if ('undefined' != typeof options && 'function' == typeof options.callback) {
+				options.callback($(item).get(0), true);
+			}
 		});
 	}
 
@@ -31,11 +35,11 @@ $.fn.SimpleAccordion = function(options) {
 		}
 
 		//Hide the other panels
-		$('.accordion-content').not($(this).next()).slideUp('fast');
-		$('.accordion-content').not($(this).next()).parent().removeClass('active');
+		that.find('.accordion-content').not($(this).next()).slideUp('fast');
+		that.find('.accordion-content').not($(this).next()).parent().removeClass('active');
 
 		// call callback (if one was specified)
-		if ('function' == typeof options.callback) {
+		if ('undefined' != typeof options && 'function' == typeof options.callback) {
 			options.callback($(this).parent().get(0), $(this).parent().hasClass('active'));
 		}
 	});
