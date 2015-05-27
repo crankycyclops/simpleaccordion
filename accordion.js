@@ -40,3 +40,4 @@ $.fn.SimpleAccordion = function(options) {
 		}
 	});
 }
+
