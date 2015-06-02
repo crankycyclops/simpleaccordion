@@ -18,7 +18,7 @@ $.fn.SimpleAccordion = function(options) {
 	// if we have any default items that are active by default, we should call their callbacks
 	if (this.find('.accordion-item.default').length > 0) {
 		$.each(this.find('.accordion-item.default'), function (i, item) {
-			if ('undefined' != typeof options && 'function' == typeof options.callback) {
+			if (undefined != options && 'function' == typeof options.callback) {
 				options.callback($(item).get(0), true);
 			}
 		});
@@ -39,9 +39,8 @@ $.fn.SimpleAccordion = function(options) {
 		that.find('.accordion-content').not($(this).next()).parent().removeClass('active');
 
 		// call callback (if one was specified)
-		if ('undefined' != typeof options && 'function' == typeof options.callback) {
+		if (undefined != options && 'function' == typeof options.callback) {
 			options.callback($(this).parent().get(0), $(this).parent().hasClass('active'));
 		}
 	});
 }
-
