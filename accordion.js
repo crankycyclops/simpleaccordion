@@ -1,8 +1,14 @@
 /**
+ * Author: James Colannino
+ * Email: crankycyclops@gmail.com
+ *
  * Simple jQuery Accordion that doesn't reply on the extremely heavy jQuery UI
  * library.
  *
  * Based on code from: http://uniondesign.ca/simple-accordion-without-jquery-ui/
+ * 
+ * This is free and unencumbered software released into the
+ * public domain. See LICENSE for more details.
  */
 $.fn.SimpleAccordion = function(options) {
 
